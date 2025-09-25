@@ -97,18 +97,37 @@
 
 /* === responsive design === */
 @media (max-width: 600px) {
+  body, html {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .card {
     padding: 1rem 1.5rem;
-    margin: 1rem;
+    margin: 1rem auto;
     min-height: auto;
+    max-width: 95vw;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-
   .button {
     --fs-size: 1.5em;
     --border-right: 4px;
   }
 }
 @media (max-width: 400px) {
+  .card {
+    padding: 0.5rem 0.5rem;
+    margin: 0.5rem auto;
+    max-width: 99vw;
+  }
   .button {
     --fs-size: 1.2em;
     --border-right: 3px;
