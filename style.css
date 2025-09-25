@@ -57,38 +57,61 @@
 
 /* === card style === */
 .card {
-    background: rgba(34, 34, 34, 0.75);
-    border-radius: 16px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
-    padding: 2rem 2.5rem;
-    max-width: 600px;
-    width: 100%;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 90vh;
-    margin: 0 auto;
+  background: rgba(34, 34, 34, 0.75);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  padding: 2rem 2.5rem;
+  max-width: 600px;
+  width: 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 90vh;
+  margin: 2rem auto;
 }
 
 /* === starfield style === */
 #stars {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
 }
+
 .star {
-    position: absolute;
-    border-radius: 50%;
-    background: white;
-    opacity: 0.8;
-    will-change: transform;
-    }
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  opacity: 0.8;
+  will-change: transform;
+}
+
 .card {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
+}
+
+/* === responsive design === */
+@media (max-width: 600px) {
+  .card {
+    padding: 1rem 1.5rem;
+    margin: 1rem;
+    min-height: auto;
+  }
+
+  .button {
+    --fs-size: 1.5em;
+    --border-right: 4px;
+  }
+}
+@media (max-width: 400px) {
+  .button {
+    --fs-size: 1.2em;
+    --border-right: 3px;
+    letter-spacing: 2px;
+  }
 }
