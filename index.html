@@ -1,8 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Projects</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body style="background-color:#161618; position: relative; overflow: hidden;">
+        <div id="stars"></div>
+        <div class="card" style="align-self: center;">
+            <div class="profile" style="text-align: center;">
+                <img src="./assets/Digital Skull pfp small.gif" alt="Profile Picture" class="profile-picture" style="border-radius: 50%; width: 200px; height: 200px; object-fit: cover;"/>
+            </div>
+
+
+            <div class="banner" style="display: flex; justify-content: center; margin-top: 20px;">
+                <div style="margin-left: 160px;">
+                    <a href="https://git.io/typing-svg">
+                        <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=Hi%2C+I'm+PanicAtTheCisco" alt="Typing SVG" />
+                    </a>
+                </div>
+            </div>
+
+            <div class="description" style="text-align: center; margin-top: 10px; color: #36BCF7FF;">
+                <p>Welcome to my projects page!</p>
+            </div>
+
+            <div class="projects-container" style="display: flex; justify-content: center; margin-top: 40px;">
+                <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+                    <a href="https://paniclabs.dev/cybersec-toolbox" style="text-decoration: none; margin-bottom: 30px;">
+                        <button class="button" data-text="Toolbox">
+                            <span class="actual-text">&nbsp;cybersec-toolbox&nbsp;</span>
+                            <span aria-hidden="true" class="hover-text">&nbsp;cybersec-toolbox&nbsp;</span>
+                        </button>
+                    </a>    
+
+                    <a href="https://github.com/PanicAtTheCisco/OSINT-Watchdog-Project" style="text-decoration: none; margin-bottom: 30px;">
+                        <button class="button" data-text="OSINT Watchdog">
+                            <span class="actual-text">&nbsp;OSINT Watchdog&nbsp;</span>
+                            <span aria-hidden="true" class="hover-text">&nbsp;OSINT Watchdog&nbsp;</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const starCount = 80;
+            const stars = [];
+            const starsDiv = document.getElementById('stars');
+            for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 2 + 1;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.top = `${Math.random() * 100}vh`;
+            star.style.left = `${Math.random() * 100}vw`;
+            // Make stars slower by reducing speed range
+            star.dataset.speed = Math.random() * 0.15 + 0.05;
+            starsDiv.appendChild(star);
+            stars.push(star);
+            }
+            function animateStars() {
+            stars.forEach(star => {
+                let top = parseFloat(star.style.top);
+                let speed = parseFloat(star.dataset.speed);
+                top += speed;
+                if (top > 100) top = 0;
+                star.style.top = `${top}vh`;
+            });
+            requestAnimationFrame(animateStars);
+            }
+            animateStars();
+        </script>
+    </body>
+</html>
