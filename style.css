@@ -1,15 +1,36 @@
+/* From Uiverse.io by satyamchaudharydev */ 
 /* === removing default button style ===*/
-.button {
+.project-button {
   margin: 0;
   height: auto;
   background: transparent;
   padding: 0;
   border: none;
   cursor: pointer;
+  position: relative;
+}
+
+/* Add arrow to the left using ::before */
+.project-button::before {
+  content: "➔";
+  position: absolute;
+  left: -1em;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--fs-size, 2em);
+  color: var(--animation-color, #37FF8B);
+  transition: color 0.3s, left 0.3s;
+  pointer-events: none;
+}
+
+/* Animate arrow on hover */
+.project-button:hover::before {
+  color: var(--animation-color, #37FF8B);
+  left: -1.3em;
 }
 
 /* button styling */
-.button {
+.project-button {
   --border-right: 6px;
   --text-stroke-color: rgba(255,255,255,0.6);
   --animation-color: #37FF8B;
@@ -18,7 +39,6 @@
   text-decoration: none;
   font-size: var(--fs-size);
   font-family: "Arial";
-  position: relative;
   text-transform: uppercase;
   color: transparent;
   -webkit-text-stroke: 1px var(--text-stroke-color);
@@ -38,19 +58,19 @@
   white-space: nowrap;
 }
 /* hide actual text on hover */
-.button .actual-text {
+.project-button .actual-text {
   color: transparent;
   -webkit-text-stroke: 1px var(--text-stroke-color);
   transition: color 0.5s;
 }
 
-.button:hover .actual-text {
+.project-button:hover .actual-text {
   color: transparent;
   -webkit-text-stroke: 0px var(--text-stroke-color);
 }
 
 /* hover */
-.button:hover .hover-text {
+.project-button:hover .hover-text {
   width: 100%;
   filter: drop-shadow(0 0 23px var(--animation-color))
 }
@@ -133,4 +153,54 @@
     --border-right: 3px;
     letter-spacing: 2px;
   }
+}
+
+/* === GitHub Button Styling === */
+/* From Uiverse.io by vinodjangid07 */ 
+.Btn {
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: .4s;
+  cursor: pointer;
+  position: relative;
+  background-color: #414141;
+  overflow: hidden;
+}
+
+.svgIcon {
+  transition-duration: .3s;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.text {
+  position: absolute;
+  color: rgb(255, 255, 255);
+  width: 120px;
+  font-weight: 600;
+  opacity: 0;
+  transition-duration: .4s;
+}
+
+.Btn:hover {
+  width: 110px;
+  transition-duration: .4s;
+  border-radius: 30px;
+}
+
+.Btn:hover .text {
+  opacity: 1;
+  transition-duration: .4s;
+}
+
+.Btn:hover .svgIcon {
+  opacity: 0;
+  transition-duration: .3s;
 }
