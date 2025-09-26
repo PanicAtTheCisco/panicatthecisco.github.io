@@ -14,10 +14,10 @@
 .project-button::before {
   content: "➔";
   position: absolute;
-  left: -1em;
+  left: -1.2em;
   top: 50%;
   transform: translateY(-55%);
-  font-size: var(--fs-size, 2em);
+  font-size: 1em;
   color: var(--animation-color, #37FF8B);
   transition: color 0.3s, left 0.3s;
   pointer-events: none;
@@ -26,7 +26,7 @@
 /* Animate arrow on hover */
 .project-button:hover::before {
   color: var(--animation-color, #37FF8B);
-  left: -0.6em;
+  left: -0.8em;
 }
 
 /* button styling */
@@ -167,48 +167,42 @@
 
 /* === Responsive Design === */
 @media (max-width: 600px) {
-  html, body {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden !important;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-  }
-
   .card {
-    max-width: 95vw;
-    min-height: 90vh;
+    max-width: 98vw;
     margin: 1rem auto;
     padding: 1rem 0.5rem;
     border-radius: 12px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-    overflow-y: auto;
+    font-size: 0.95em;
   }
 
-  .project-button {
-    font-size: 1.4em; /* Slightly bigger */
-    letter-spacing: 3px;
-    --fs-size: 2em; /* Keep arrow and text same size */
-  }
-
-  .hover-text {
-    font-size: 1.4em; /* Match button size */
-  }
-
-  .Btn {
-    width: 50px;   /* Slightly bigger */
-    height: 50px;
-  }
-
-  .Btn:hover {
-    width: 120px;
-    border-radius: 30px;
-  }
-
-  .text {
+  .card * {
     font-size: 1em;
-    width: 120px;
+    box-sizing: border-box;
+  }
+
+  .card .project-button {
+    font-size: 1.1em;
+    --fs-size: 1.3em;
+    letter-spacing: 2px;
+  }
+
+  .card .hover-text {
+    font-size: 1.1em;
+  }
+
+  .card .Btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .card .Btn:hover {
+    width: 90px;
+    border-radius: 24px;
+  }
+
+  .card .text {
+    font-size: 0.95em;
+    width: 90px;
   }
 }
