@@ -165,74 +165,49 @@
   transition-duration: .3s;
 }
 
-/* === responsive design === */
-body, html {
-  width: 100vw;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: flex-start; /* Align to top */
-  justify-content: center;
-  background: #222;
-  box-sizing: border-box;
-  overflow-y: auto; /* Enable vertical scrolling */
-  overflow-x: hidden;
-}
-
-.card {
-  padding: clamp(0.75rem, 3vw, 2rem);
-  margin: clamp(0.5rem, 2vw, 1.5rem) auto 0 auto; /* Top margin only */
-  min-height: clamp(50vh, 70vh, 90vh);
-  max-width: clamp(280px, 95vw, 600px);
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start; /* Content starts at top */
-  box-sizing: border-box;
-}
-
-.project-button,
-.Btn {
-  font-size: clamp(0.9em, 3vw, 2em);
-  --fs-size: clamp(0.9em, 3vw, 2em);
-  --border-right: clamp(2px, 1vw, 6px);
-  letter-spacing: clamp(1px, 0.5vw, 3px);
-}
-
-.hover-text {
-  font-size: clamp(0.9em, 3vw, 2em);
-}
-
-.text {
-  font-size: clamp(0.75em, 2.5vw, 1em);
-  width: clamp(70px, 25vw, 120px);
-}
-
+/* === Responsive Design === */
 @media (max-width: 600px) {
   body, html {
-    overflow-y: auto;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
     overflow-x: hidden;
-    align-items: flex-start;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
   }
-  .card {
-    padding: clamp(0.5rem, 2vw, 1rem);
-    margin: clamp(0.25rem, 2vw, 0.75rem) auto 0 auto;
-    min-height: auto;
-    max-width: 99vw;
-  }
-}
 
-@media (max-width: 400px) {
-  body, html {
-    overflow-y: auto;
-    overflow-x: hidden;
-    align-items: flex-start;
-  }
   .card {
-    padding: clamp(0.2rem, 2vw, 0.4rem);
-    margin: clamp(0.1rem, 2vw, 0.3rem) auto 0 auto;
-    max-width: 100vw;
+    max-width: 95vw;
+    min-height: 90vh;
+    margin: 1rem auto;
+    padding: 1rem 0.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    overflow-y: auto;
+  }
+
+  .project-button {
+    font-size: 1.2em;
+    letter-spacing: 2px;
+  }
+
+  .hover-text {
+    font-size: 1.2em;
+  }
+
+  .Btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .Btn:hover {
+    width: 90px;
+    border-radius: 24px;
+  }
+
+  .text {
+    font-size: 0.9em;
+    width: 90px;
   }
 }
