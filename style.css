@@ -1,7 +1,7 @@
 /* === Banner style === */
 .banner-title {
     font-family: Menlo, Roboto Mono, monospace;
-    font-size: clamp(16px, 4vw, 28px);
+    font-size: clamp(18px, 4vw, 28px);
     font-weight: 600;
     color: #C8D0D8;
     letter-spacing: 0.1rem;
