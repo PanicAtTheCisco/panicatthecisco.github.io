@@ -23,7 +23,31 @@ document.addEventListener('DOMContentLoaded', () => {
         [255, 86, 124],  // plasma pink
         [250, 201, 53],  // dark yellow
         [2, 48, 32],     // dark green
+
+        // AI weighted list based on Hubble color mappings 
+        [255, 0, 80],     // Hα (slightly less frequent)
+        [255, 0, 80],
+        [0, 255, 204],    // OIII (more frequent)
+        [0, 255, 204],
+        [0, 255, 204],
+        [79, 134, 247],   // Hβ (rare)
+        [255, 36, 0],     // SII (more frequent)
+        [255, 36, 0]
     ];
+
+    // const colors = [
+    //     // Deep purples and violets – dominant in fantasy nebulae
+    //     [141, 124, 238], [172, 58, 242], [141, 124, 238],
+
+    //     // Electric blues and cyans – glowing gas
+    //     [140, 189, 248], [100, 255, 213], [140, 189, 248],
+
+    //     // Bright magentas and pinks – cosmic energy
+    //     [255, 80, 150], [255, 80, 150],
+
+    //     // Soft whites – ethereal mist
+    //     [255, 255, 244]
+    // ];     
 
     const CLUSTER_COUNT = 3;
     const LAYERS = 6;        // layers per cluster, more = denser cloud
@@ -88,7 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         for (let l = 0; l < LAYERS; l++) {
             // change color on each layer to add more variance in the colors of each nebula, but not too much
-            color = colors[Math.floor(Math.random() * colors.length)];
+            color = colors[Math.floor(Math.random() * colors.length)]; // random from select colors
+            //color = [Math.random() * 256, Math.random() * 256, Math.random() * 256] //use this if you want random from any color
             for (let b = 0; b < BLOBS_PER_LAYER; b++) {
                 blobs.push(new Blob(cx, cy, spread * (l / LAYERS + 0.3), color));
             }
