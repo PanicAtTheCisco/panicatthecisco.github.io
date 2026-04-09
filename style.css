@@ -65,6 +65,27 @@
   z-index: 1;
 }
 
+.shooting-star {
+    position: absolute;
+    width: 150px;
+    height: 2px;
+    background: linear-gradient(to right, white, transparent);
+    border-radius: 50%;
+    transform: rotate(var(--angle));
+    animation: shoot var(--duration) linear forwards;
+}
+
+@keyframes shoot {
+    from {
+        opacity: 1;
+        transform: rotate(var(--angle)) translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: rotate(var(--angle)) translateX(300px);
+    }
+}
+
 /* === GitHub Button Styling === */
 /* From Uiverse.io by vinodjangid07 */ 
 .Btn {
