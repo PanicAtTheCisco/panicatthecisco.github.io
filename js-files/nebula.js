@@ -33,21 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         [79, 134, 247],   // Hβ (rare)
         [255, 36, 0],     // SII (more frequent)
         [255, 36, 0]
-    ];
-
-    // const colors = [
-    //     // Deep purples and violets – dominant in fantasy nebulae
-    //     [141, 124, 238], [172, 58, 242], [141, 124, 238],
-
-    //     // Electric blues and cyans – glowing gas
-    //     [140, 189, 248], [100, 255, 213], [140, 189, 248],
-
-    //     // Bright magentas and pinks – cosmic energy
-    //     [255, 80, 150], [255, 80, 150],
-
-    //     // Soft whites – ethereal mist
-    //     [255, 255, 244]
-    // ];     
+    ];    
 
     const CLUSTER_COUNT = 3;
     const LAYERS = 6;        // layers per cluster, more = denser cloud
