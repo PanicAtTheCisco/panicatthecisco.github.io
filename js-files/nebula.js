@@ -20,6 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
         [20, 60, 120],   // deep blue
         [40, 100, 120],  // teal-blue
         [100, 30, 80],   // dark magenta
+        [255, 86, 124],  // plasma pink
+        [250, 201, 53],  // dark yellow
+        [2, 48, 32],     // dark green
     ];
 
     const CLUSTER_COUNT = 3;
@@ -81,10 +84,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const cx = Math.random() * canvas.width;
         const cy = Math.random() * canvas.height;
         const spread = Math.random() * 180 + 120;
-        const color = colors[Math.floor(Math.random() * colors.length)];
         const blobs = [];
 
         for (let l = 0; l < LAYERS; l++) {
+            // change color on each layer to add more variance in the colors of each nebula, but not too much
+            color = colors[Math.floor(Math.random() * colors.length)];
             for (let b = 0; b < BLOBS_PER_LAYER; b++) {
                 blobs.push(new Blob(cx, cy, spread * (l / LAYERS + 0.3), color));
             }

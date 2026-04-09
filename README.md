@@ -5,4 +5,4 @@
 * GitHub Button
   - From Uiverse.io by vinodjangid07
 * Star Parallax, Nebula, and Code Spin Effects
-  - Made by Claude (I'm not that good at JS or CSS yet lol)
+  - Made by Claude, modified by me (I'm not that good at JS or CSS yet lol)
